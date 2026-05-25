@@ -1,0 +1,80 @@
+# =========================
+# Java
+# =========================
+
+# Archivos compilados
+*.class
+
+# Archivos empaquetados
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+
+# =========================
+# Directorios de build
+# =========================
+
+bin/
+build/
+out/
+target/
+
+# =========================
+# IntelliJ IDEA
+# =========================
+
+.idea/
+*.iml
+
+# =========================
+# VS Code
+# =========================
+
+.vscode/
+
+# =========================
+# Eclipse
+# =========================
+
+.project
+.classpath
+.settings/
+
+# =========================
+# NetBeans
+# =========================
+
+nbproject/private/
+build/
+dist/
+nbbuild/
+.nb-gradle/
+
+# =========================
+# Archivos del sistema
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# =========================
+# Archivos temporales
+# =========================
+
+*.tmp
+*.swp
+
+# =========================
+# Datos generados
+# =========================
+
+*.csv
+*.txt
+
+# =========================
+# Virtual environments
+# =========================
+.venv
