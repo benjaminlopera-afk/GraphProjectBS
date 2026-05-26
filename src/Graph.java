@@ -28,5 +28,55 @@ public class Graph {
 
             System.out.println();
         }
+
+    }
+    public int getDegree(int vertex) {
+
+        if (!adjacencyList.containsKey(vertex)) {
+            return 0;
+        }
+
+        return adjacencyList.get(vertex).size();
+    }
+    public boolean isMultigraph() {
+
+        for (int source : adjacencyList.keySet()) {
+
+            ArrayList<Edge> edges = adjacencyList.get(source);
+
+            for (int i = 0; i < edges.size(); i++) {
+
+                Edge current = edges.get(i);
+
+                if (source == current.target) {
+                    return true;
+                }
+
+                for (int j = i + 1; j < edges.size(); j++) {
+
+                    if (current.target == edges.get(j).target) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+    public boolean isComplete() {
+
+        int totalVertices = adjacencyList.size();
+
+        for (int source : adjacencyList.keySet()) {
+
+            ArrayList<Edge> edges = adjacencyList.get(source);
+
+            if (edges.size() != totalVertices - 1) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
+
