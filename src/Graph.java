@@ -13,8 +13,11 @@ public class Graph {
     public void addEdge(int source, int target, int weight) {
 
         adjacencyList.putIfAbsent(source, new ArrayList<>());
+        adjacencyList.putIfAbsent(target, new ArrayList<>());
 
-        adjacencyList.get(source).add(new Edge(target, weight));
+        adjacencyList.get(source).add(
+                new Edge(target, weight)
+        );
     }
 
     public void printGraph() {
