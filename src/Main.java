@@ -11,13 +11,9 @@ public class Main {
 //        graph.addEdge(1, 2, 1);
 
         graph.printGraph();
-        System.out.println(
-                "Grado del vertice 0: " + graph.getDegree(0)
-
-        );
-        System.out.println(
-                "Grado del vertice 1: " + graph.getDegree(1)
-        );
+        for (int vertex : graph.adjacencyList.keySet()) {
+            System.out.println("Grado del vertice " + vertex + ": " + graph.getDegree(vertex));
+        }
 
         if(graph.isMultigraph()) {
             System.out.println("Es multigrafo");

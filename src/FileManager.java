@@ -19,6 +19,8 @@ public class FileManager {
 
                 String line = scanner.nextLine();
 
+                if (line.startsWith("source")) continue;
+
                 String[] parts = line.split(",");
 
                 int source = Integer.parseInt(parts[0]);
