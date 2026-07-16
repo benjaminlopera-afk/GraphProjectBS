@@ -152,5 +152,14 @@ public class Graph {
         return oddDegreeCount == 2;
     }
 
+    public boolean hasEulerCircuit() {
+        for (int vertex : adjacencyList.keySet()) {
+            if (getDegree(vertex) % 2 != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
 

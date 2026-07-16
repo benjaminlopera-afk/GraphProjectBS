@@ -43,6 +43,11 @@ public class Main {
         } else {
             System.out.println("No tiene camino de Euler");
         }
-        
+
+        if (graph.hasEulerCircuit()) {
+            System.out.println("Tiene circuito de Euler");
+        } else {
+            System.out.println("No tiene circuito de Euler");
+        }
     }
 }
