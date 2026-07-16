@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Graph {
 
@@ -83,6 +84,36 @@ public class Graph {
         }
 
         return true;
+    }
+
+    private void dfs(int vertex, HashSet<Integer> visited) {
+        visited.add(vertex);
+        for (Edge edge : adjacencyList.get(vertex)) {
+            if (!visited.contains(edge.target)) {
+                dfs(edge.target, visited);
+            }
+        }
+    }
+
+    public boolean isTree() {
+        // Contar total de aristas
+        int totalEdges = 0;
+        for (int source : adjacencyList.keySet()) {
+            totalEdges += adjacencyList.get(source).size();
+        }
+
+        // Un árbol tiene exactamente n-1 aristas
+        int totalVertices = adjacencyList.size();
+        if (totalEdges != totalVertices - 1) {
+            return false;
+        }
+
+        // Verificar conexidad con DFS
+        int startVertex = adjacencyList.keySet().iterator().next();
+        HashSet<Integer> visited = new HashSet<>();
+        dfs(startVertex, visited);
+
+        return visited.size() == totalVertices;
     }
 
 }

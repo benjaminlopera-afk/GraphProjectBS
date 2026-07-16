@@ -26,5 +26,11 @@ public class Main {
             System.out.println("No es completo");
         }
 
+        if (graph.isTree()) {
+            System.out.println("Es un árbol");
+        } else {
+            System.out.println("No es un árbol");
+        }
+
     }
 }
