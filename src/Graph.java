@@ -96,24 +96,48 @@ public class Graph {
     }
 
     public boolean isTree() {
-        // Contar total de aristas
         int totalEdges = 0;
         for (int source : adjacencyList.keySet()) {
             totalEdges += adjacencyList.get(source).size();
         }
 
-        // Un árbol tiene exactamente n-1 aristas
         int totalVertices = adjacencyList.size();
         if (totalEdges != totalVertices - 1) {
             return false;
         }
 
-        // Verificar conexidad con DFS
         int startVertex = adjacencyList.keySet().iterator().next();
         HashSet<Integer> visited = new HashSet<>();
         dfs(startVertex, visited);
 
         return visited.size() == totalVertices;
+    }
+
+    private boolean hasCycle(int vertex, int parent, HashSet<Integer> visited) {
+        visited.add(vertex);
+        for (Edge edge : adjacencyList.get(vertex)) {
+            if (!visited.contains(edge.target)) {
+                if (hasCycle(edge.target, vertex, visited)) {
+                    return true;
+                }
+            } else if (edge.target != parent) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isForest() {
+        HashSet<Integer> visited = new HashSet<>();
+
+        for (int vertex : adjacencyList.keySet()) {
+            if (!visited.contains(vertex)) {
+                if (hasCycle(vertex, -1, visited)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 }

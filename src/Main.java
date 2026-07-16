@@ -32,5 +32,11 @@ public class Main {
             System.out.println("No es un árbol");
         }
 
+        if (graph.isForest()) {
+            System.out.println("Es un bosque");
+        } else {
+            System.out.println("No es un bosque");
+        }
+
     }
 }
