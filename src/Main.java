@@ -38,5 +38,11 @@ public class Main {
             System.out.println("No es un bosque");
         }
 
+        if (graph.hasEulerPath()) {
+            System.out.println("Tiene camino de Euler");
+        } else {
+            System.out.println("No tiene camino de Euler");
+        }
+        
     }
 }

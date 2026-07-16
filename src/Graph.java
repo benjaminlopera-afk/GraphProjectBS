@@ -140,5 +140,17 @@ public class Graph {
         return true;
     }
 
+    public boolean hasEulerPath() {
+        int oddDegreeCount = 0;
+
+        for (int vertex : adjacencyList.keySet()) {
+            if (getDegree(vertex) % 2 != 0) {
+                oddDegreeCount++;
+            }
+        }
+
+        return oddDegreeCount == 2;
+    }
+
 }
 
