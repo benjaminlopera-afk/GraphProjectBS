@@ -149,7 +149,7 @@ public class Graph {
             }
         }
 
-        return oddDegreeCount == 2;
+        return oddDegreeCount == 2 || oddDegreeCount == 0;
     }
 
     public boolean hasEulerCircuit() {

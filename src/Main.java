@@ -49,5 +49,30 @@ public class Main {
         } else {
             System.out.println("No tiene circuito de Euler");
         }
+        
+        System.out.println("\n--- Grafo de prueba 1 (árbol) ---");
+        Graph graph1 = new Graph();
+        graph1.addEdge(0, 1, 1);
+        graph1.addEdge(1, 2, 1);
+        graph1.addEdge(2, 3, 1);
+
+        System.out.println(graph1.isTree()         ? "Es un árbol"            : "No es un árbol");
+        System.out.println(graph1.isForest()       ? "Es un bosque"           : "No es un bosque");
+        System.out.println(graph1.hasEulerPath()   ? "Tiene camino de Euler"  : "No tiene camino de Euler");
+        System.out.println(graph1.hasEulerCircuit()? "Tiene circuito de Euler": "No tiene circuito de Euler");
+
+        System.out.println("\n--- Grafo de prueba 2 (ciclo) ---");
+        Graph graph2 = new Graph();
+        graph2.addEdge(0, 1, 1);
+        graph2.addEdge(1, 0, 1);
+        graph2.addEdge(1, 2, 1);
+        graph2.addEdge(2, 1, 1);
+        graph2.addEdge(2, 0, 1);
+        graph2.addEdge(0, 2, 1);
+
+        System.out.println(graph2.isTree()         ? "Es un árbol"            : "No es un árbol");
+        System.out.println(graph2.isForest()       ? "Es un bosque"           : "No es un bosque");
+        System.out.println(graph2.hasEulerPath()   ? "Tiene camino de Euler"  : "No tiene camino de Euler");
+        System.out.println(graph2.hasEulerCircuit()? "Tiene circuito de Euler": "No tiene circuito de Euler");
     }
 }

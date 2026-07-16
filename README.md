@@ -11,6 +11,10 @@ Proyecto creado para la materia Matemáticas Discretas II de la Universidad del 
 - Calcular el grado de un vértice
 - Detectar multigrafos
 - Verificar si un grafo es completo
+- Verificar si un grafo es un árbol
+- Verificar si un grafo es un bosque
+- Verificar si un grafo tiene camino de Euler
+- Verificar si un grafo tiene circuito de Euler
 - Leer grafos desde archivos `.txt`
 
 ---
@@ -57,6 +61,10 @@ Funciones implementadas:
 - `getDegree()`
 - `isMultigraph()`
 - `isComplete()`
+- `isTree()`
+- `isForest()`
+- `hasEulerPath()`
+- `hasEulerCircuit()`
 
 ---
 
@@ -112,3 +120,11 @@ Matemáticas Discretas II
 - Verificación de grafo completo
 - Impresión del grafo en consola
 - Reestructuración del proyecto en múltiples clases
+
+15/07/2026
+
+- Verificación de árbol usando DFS
+- Verificación de bosque usando DFS
+- Verificación de camino de Euler
+- Verificación de circuito de Euler
+- Grafos de prueba agregados en Main para validar las nuevas funciones
